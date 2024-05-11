@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>online shopping site for Flipkart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<link rel="shortcut icon" href="data:image/jpeg;base64,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" type="image/x-icon">
+  </head>
+  <body>
+    <div class="navBar">
+      <div class="carta">  <i class="ri-menu-2-line"></i></div>
+      <div class="logo"><img src="fliplogo.svg" /></div>
+      <div class="serchbar">
+        <i class="ri-search-line"
+          ><h3>Search for Products , Brands and More</h3></i
+        >
+      </div>
+      <div class="login">
+        <i class="ri-account-pin-circle-line"><h3>Login</h3></i>
+      </div>
+      <div class="cart">
+        <i class="ri-shopping-cart-line"><h3>Cart</h3></i>
+      </div>
+      <div class="seller"><h3>Become a Seller</h3></div>
+    </div>
+
+    <div class="menu">
+      <div class="grocery ss">
+        <img src="grocery.webp" alt="" />
+        <h5>Grocery</h5>
+      </div>
+      <div class="mobiles ss">
+        <img src="mobile.webp" alt="" />
+        <h5>Mobiles</h5>
+      </div>
+      <div class="fashion ss">
+        <img src="fashions.png" alt="" />
+        <h5>fashion</h5>
+      </div>
+      <div class="electronics ss">
+        <img src="lap.jfif" width="80vw" alt="" />
+        <h5>Electronics</h5>
+      </div>
+      <div class="applinences ss">
+        <img src="appliances.webp" alt="" />
+        <h5>Applinences</h5>
+      </div>
+      <div class="travel ss">
+        <img src="travel.webp" alt="" />
+        <h5>Travel</h5>
+      </div>
+      <div class="toys ss">
+        <img src="teddy.png" alt="" />
+        <h5>Toys & More</h5>
+      </div>
+      <div class="twowheeler ss">
+        <img src="activa.webp" width="60vw" alt="" />
+        <h5>Two Wheeler</h5>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img4.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="img2.jpg" alt=""></div>
+          <div class="swiper-slide"><img src="img3.png" alt=""></div>
+          <div class="swiper-slide"><img src="img1.jpg" alt=""></div>
+          
+         </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    
+    </div>   
+
+    <div class="main">
+      <div class="1img abc ">
+        <img src="spekar.jpeg" alt="" />
+        <div class="1para">
+          <h4>Best Selling Mobile Spekar</h4>
+          <h3>From ₹499</h3>
+        </div>
+      </div>
+      <div class="2img abc ">
+        <img src="truwirless.jpeg" alt="" />
+        <div class="2para">
+          <h4>Best tru Wirless Headphone</h4>
+          <h3>Grab Now</h3>
+        </div>
+      </div>
+      <div class="img3 abc ">
+        <img src="mirror.jpeg" alt="" />
+        <div class="3para">
+          <h4>Top Mirrorless Cameras</h4>
+          <h3>Shop Now</h3>
+        </div>
+      </div>
+      <div class="img4 abc ">
+        <img src="keyboard.jpeg" alt="" />
+        <div class="4para">
+          <h4>Top Selling Dell keyboerd</h4>
+          <h3>From ₹499</h3>
+        </div>
+      </div>
+      <div class="5img abc ">
+        <img src="noise smart.jpg" alt="" />
+        <div class="5para">
+          <h4>Noise SmartWatches</h4>
+          <h3>From ₹1,099</h3>
+        </div>
+      </div>
+      <div class="6img abc ">
+        <img src="fastracks.jpeg" alt="" />
+        <div class="6para">
+          <h4>Fastrack SmartWatches</h4>
+          <h3>From ₹1,399</h3>
+        </div>
+      </div>
+    </div>
+
+      <div class="more">
+        <div class="aimg xyz">
+          <img src="Electric.jpeg" alt="" />
+          <h4>Electric Cycle</h4>
+          <h3>Up to 40% off</h3>
+        </div>
+        <div class="bimg xyz">
+          <img src="puzzles.jpeg" alt="" />
+          <h4>Puzzles & Cubes</h4>
+          <h3>From ₹79</h3>
+        </div>
+        <div class="cimg xyz">
+          <img src="action.jpeg" alt="" />
+          <h4>Best Of Action Toys</h4>
+          <h3>Up to 70% off</h3>
+        </div>
+        <div class="dimg xyz">
+          <img src="non geaard.jpeg" alt="" />
+          <h4>Non-Geared Cycles</h4>
+          <h3>Up to 40% off</h3>
+        </div>
+        <div class="eimg xyz">
+          <img src="microphones.jpeg" alt="" />
+          <h4>Microphones</h4>
+          <h3>Up to 70% off</h3>
+        </div>
+        <div class="fimg xyz">
+          <img src="soft toyd.jpeg" alt="" />
+          <h4>Soft tpys</h4>
+          <h3>Upto 70% off</h3>
+        </div>
+      </div>
+   
+    <div class="shop">
+      <div class="student">
+        <div class="student1">
+          <div class="himg vxyz">
+            <img src="lcd.jpeg" alt="" />
+            <h4>Benq monitors</h4>
+            <h3>From 9990</h3>
+          </div>
+          <div class="iimg vxyz">
+            <img src="backpack.jpeg" alt="" width="150px" />
+            <h4>Bakpacks</h4>
+            <h3>min 70% off</h3>
+          </div>
+        </div>
+
+        <div class="student2">
+          <div class="jimg vxyz">
+            <img src="smart bands.jpeg" alt="" width="150px"/>
+            <h4>Microphones</h4>
+            <h3>Up to 70% off</h3>
+          </div>
+          <div class="kimg vxyz">
+            <img src="headset.jpeg" alt=""width="150px" />
+            <h4>Soft tpys</h4>
+            <h3>Upto 70% off</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="selling">
+        <img src="explore now.jpg" alt="sanket" width="100%" height="100%" />
+      </div>
+    </div>
+
+    <div class="box">
+        <div class="1img efg">
+          <img src="headset2 (1).jpeg" alt="" width="150px"  />
+          <div class="1para">
+            <h4>Hedset </h4>
+            <h3>Min.50% off</h3>
+          </div>
+        </div>
+        <div class="2img efg">
+          <img src="smatband2.jpeg" alt="" width="150px"   />
+          <div class="2para">
+            <h4>Smart Bands</h4>
+            <h3>Min. 40% off</h3>
+          </div>
+        </div>
+        <div class="img3 efg">
+          <img src="neckband.jpeg" alt="" width="150px"   />
+          <div class="3para">
+            <h4>Neckband</h4>
+            <h3>Min.40% off</h3>
+          </div>
+        </div>
+        <div class="img44 efg">
+          <img src="headset2 (4).jpeg" alt=""width="150px"   />
+          <div class="4para">
+            <h4>Neckband </h4>
+            <h3>Min.50% off</h3>
+          </div>
+        </div>
+        <div class="5img efg">
+          <img src="mekup.jpeg" alt=""width="120px"   />
+          <div class="5para">
+            <h4>Noise SmartWatches</h4>
+            <h3>From ₹1,099</h3>
+          </div>
+        </div>
+        <div class="6img efg">
+          <img src="lips.jpeg" alt="" width="120px"  />
+          <div class="6para">
+            <h4>Makeup kits & Combo </h4>
+            <h3>Best Desals</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="boxes2">
+        <div class="1img yz">
+          <img src="Decor.jpeg" alt="" width="150px"  />
+          <div class="1para">
+            <h4>Wal Decor Items</h4>
+            <h3>Upto 80% off </h3>
+          </div>
+        </div>
+        <div class="2img yz">
+          <img src="stickers.jpeg" alt="" width="150px"   />
+          <div class="2para">
+            <h4>Stickers & Wallpapers</h4>
+            <h3>Min. 40% off</h3>
+          </div>
+        </div>
+        <div class="img3 yz">
+          <img src="Showpleces (1).jpeg" alt="" width="150px"   />
+          <div class="3para">
+            <h4>Showplece</h4>
+            <h3>Up to 80% off</h3>
+          </div>
+        </div>
+        <div class="img44 yz">
+          <img src="clocks.jpeg" alt=""width="150px"   /> 
+          <div class="4para">
+            <h4>Clocks</h4>
+            <h3>Upto 80% off  </h3>
+          </div>
+        </div>
+        <div class="5img yz">
+          <img src="diysa.jpeg" alt=""width="120px"   />
+          <div class="5para">
+            <h4>Diyas, candles & Holders </h4>
+            <h3> Upto 80% off</h3>
+          </div>
+        </div>
+        <div class="6img yz">
+          <img src="wall decor.jpeg" alt="" width="120px"  />
+          <div class="6para">
+            <h4>Wall Decor items </h4>
+            <h3>Uptp 80% off</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="shoping">
+
+       <div class="div1">
+        <div class="div12">
+          <div class="student1">
+            <div class="himg bc">
+              <img src="Mens Caps.jpeg" alt="" />
+              <h4>Mens Caps </h4>
+              <h3>min 70% off</h3>
+            </div>
+            <div class="iimg bc">
+              <img src="Mens t shirtss.jpeg" alt="" width="150px" />
+              <h4>Mens T shirts </h4>
+              <h3>special offers</h3>
+            </div>
+          </div>
+  
+          <div class="student2">
+            <div class="jimg bc">
+              <img src="Mens Slipers.jpeg" alt="" width="150px"/>
+              <h4>Mens slippers & Flip </h4>
+              <h3>Min 70% off</h3>
+            </div>
+            <div class="kimg bc">
+              <img src="laptop bag.jpeg" alt=""width="150px" />
+              <h4>Backpacks</h4>
+              <h3>Min 70% off</h3>
+            </div>
+          </div>
+        </div></div>
+  
+          <div class="div2"><div class="div23">
+            <div class="student1">
+              <div class="himg bc">
+                <img src="tru wirless.jpeg" alt="" width="150px" />
+                <h4>True wireless</h4>
+                <h3>Min 50% off</h3>
+              </div>
+              <div class="iimg bc">
+                <img src="pendent.jpeg" alt="" width="150px" />
+                <h4>Pendents</h4>
+                <h3>min 70% off</h3>
+              </div>
+            </div>
+    
+            <div class="student2">
+              <div class="jimg bc">
+                <img src="backpacks.jpeg" alt="" width="150px"/>
+                <h4>Backpacks</h4>
+                <h3>Up to 70% off</h3>
+              </div>
+              <div class="kimg bc">
+                <img src="headset.jpeg" alt=""width="150px" />
+                <h4>Hedset</h4>
+                <h3>Upto 70% off</h3>
+              </div>
+            </div>
+          </div></div>
+        
+     <div class="div3"><img src="fashion needs.jpg" alt="" height="100%" width="100%"></div>
+      </div>
+
+      <div class="footar">
+
+        <div class="list1 sp">
+          <h3>About</h3>
+          <h4>Contacts</h4>
+          <h4>About us</h4>
+          <h4>Flipkart Stories</h4>
+          <h4>Press</h4>
+          <h4>Corporate Information</h4>
+        </div>
+        <div class="list2 sp">
+          <h3>GROUP COMPANES</h3>
+           <H4>Myntra</H4>
+           <h4>Flipkart Wholesales</h4>
+           <h4>Cleartrip</h4>
+           <h4>Shopy</h4>
+          </div>
+
+        <div class="list3 sp">
+          <h3>HELP</h3>
+          <h4>payments</h4>
+          <h4>Shiping</h4>
+          <h4>Canccelation</h4>
+          <h4>Fag</h4>
+          <h4>Report Infringement</h4>
+        </div>
+        <div class="list4 sp">
+          <h3>CONSUMER POLICY</h3>
+          <h4>Cancellation & Returns</h4>
+          <h4>Terms Of Use</h4>
+          <h4>Security</h4>
+          <h4>Privacy</h4>
+          <h4>Sitmap</h4>
+          <h4>Grivance Redressal</h4>
+          <h4>EPR ompliance</h4>
+        </div>
+        <div class="list5 sp">
+          <h3>Mail Us</h3>
+          <h4>Flipkart internet Private Limited</h4>
+          <h4>Buildings Embass Tech Village </h4>
+          <h4>Outer Ring Road Devarbeesanhil village </h4>
+          <h4>benglure,560103</h4>
+          <h4>karnatka , india </h4>
+          
+        </div>
+        <div class="list6 sp">
+          <h3>Ragistered Ofhice Address</h3>
+          <h4>Flipkart internet private Limited</h4>
+          <h4>Clove Embassy tech village</h4>
+          <h4>Outer ring Road Devarabeesanahallii</h4>
+          <h4>Bengluru, 560103</h4>
+          <h4>karnataka india</h4>
+          <h4>CIN:U51109ka2012ptss77746107</h4>
+          <h4>Telephone:044-4134234</h4>
+        </div>
+         
+
+      </div>
+
+      <div class="footarlist">
+        <div class="list7"><h5>Become aSeller</h5></div>
+        <div class="list8"><h5>Advetise</h5></div>
+        <div class="list9"><h5>Gift Cards</h5></div>
+        <div class="list10"><h5>Help Centar</h5></div>
+        <div class="list11"><img src="payment-method-c454fb (1).svg" alt=""></div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="script.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="script.js"></script>
+   
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>
